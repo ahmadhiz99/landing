@@ -60,7 +60,7 @@ export default function Index({flash,blogs}) {
                                                             {blog.created_at ? new Date(blog.created_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }) : 'N/A'}
                                                         </p>
                                                         <div className='flex flex-row gap-2'>
-                                                            {
+                                                            {blog?.label &&
                                                             JSON.parse(blog?.label || "[]").map((label, idx) => (
                                                                     <p key={idx} className="bg-blue-300/80 px-2 flex items-center rounded-full text-white">
                                                                         {label}

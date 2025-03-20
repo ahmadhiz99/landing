@@ -29,7 +29,7 @@ export default function BlogShow({blog}) {
             <Head title="Blogs" />
             <div className="flex flex-col gap-4 w-full text-justify">
                 <div className="mt-12 gap-4 grid lg:grid-cols-1 xl:grid-cols-2">
-                    
+
                     {blog && (
                         <div>
                             <div className='flex flex-row justify-between'>
@@ -37,7 +37,7 @@ export default function BlogShow({blog}) {
                                     {blog.created_at ? new Date(blog.created_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }) : 'N/A'}
                                 </p>
                                 <div className='flex flex-row gap-2'>
-                                    {
+                                    {blog?.label &&
                                     JSON.parse(blog?.label || "[]").map((label, idx) => (
                                             <p key={idx} className="bg-blue-300/80 px-2 flex items-center rounded-full text-white">
                                                 {label}
