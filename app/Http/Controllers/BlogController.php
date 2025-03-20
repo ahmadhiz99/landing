@@ -21,7 +21,7 @@ class BlogController extends Controller
      */
     public function getDataJSON()
     {
-        $blogs = Blog::with('category','subcategory')->paginate(10);
+        $blogs = Blog::with('category','subcategory')->where('status','publish')->paginate(10);
         return response()->json($blogs);
     }
     /**
