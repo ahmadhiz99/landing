@@ -15,9 +15,9 @@ export default function Create({ auth, flash, data_category, data_subcategory, b
     const default_subcategory = blog ? blog.subcategory : props.flash.response?.data.subcategory ?? '';
     const default_title = blog ? blog.title : props.flash.response?.data.title ?? '';
     const default_content = blog ? blog.content : props.flash.response?.data.content ?? '';
-    const default_label = blog ? blog.label : props.flash.response?.data.label ?? '';
+    const default_label = blog ? blog.label : props.flash.response?.data.label ?? '[]';
     const default_id = blog ? blog.id : props.flash.response?.data.id ?? '';
-    const parse_label = default_label ? JSON.parse(default_label) : '';
+    const parse_label = default_label ? JSON.parse(default_label || "[]") : [];
 
     const [category, setCategory] = useState(default_category);
     const [subcategory, setSubcategory] = useState(default_subcategory);
@@ -25,7 +25,7 @@ export default function Create({ auth, flash, data_category, data_subcategory, b
     const [content, setContent] = useState(default_content);
     const [id, setId] = useState(default_id);
     
-    const [tags, setTags] = useState(default_label); // Menyimpan daftar tag
+    const [tags, setTags] = useState(parse_label); // Menyimpan daftar tag
     const [label, setLabel] = useState(''); // Menyimpan input sementara
 
     // Format data_category untuk react-select
