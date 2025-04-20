@@ -19,11 +19,11 @@ export default function Create({ auth, flash, data_category, data_subcategory, b
     const default_id = blog ? blog.id : props.flash.response?.data.id ?? '';
     const parse_label = default_label ? JSON.parse(default_label || "[]") : [];
 
-    const [category, setCategory] = useState(default_category);
-    const [subcategory, setSubcategory] = useState(default_subcategory);
-    const [title, setTitle] = useState(default_title);
-    const [content, setContent] = useState(default_content);
-    const [id, setId] = useState(default_id);
+    const [category, setCategory] = useState(default_category ? default_category : '');
+    const [subcategory, setSubcategory] = useState(default_subcategory ? default_subcategory : '');
+    const [title, setTitle] = useState(default_title ? default_title : '');
+    const [content, setContent] = useState(default_content ? default_content : '');
+    const [id, setId] = useState(default_id ? default_id : '');
     
     const [tags, setTags] = useState(parse_label); // Menyimpan daftar tag
     const [label, setLabel] = useState(''); // Menyimpan input sementara
