@@ -11,7 +11,7 @@ import Select from "react-select";
 
 export default function Create({ auth, flash, data_category, data_subcategory, blog }) {
     const props = usePage().props;
-    const default_category = blog ? blog.category : props.flash.response?.data.category ?? '';
+    const default_category = blog ? blog.category : props.flash.response?.data?.category ?? '';
     const default_subcategory = blog ? blog.subcategory : props.flash.response?.data.subcategory ?? '';
     const default_title = blog ? blog.title : props.flash.response?.data.title ?? '';
     const default_content = blog ? blog.content : props.flash.response?.data.content ?? '';
